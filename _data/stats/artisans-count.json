@@ -1,0 +1,11 @@
+{
+  "id": "artisans-count",
+  "number": "120+",
+  "label_en": "Artisan Communities Supported",
+  "label_ar": "مجتمعات الحرفيين المدعومة",
+  "description_en": "Across all regions of Sudan, from Nubian communities in the north to Beja tribes in the east.",
+  "description_ar": "عبر جميع مناطق السودان، من المجتمعات النوبية في الشمال إلى قبائل البجا في الشرق.",
+  "icon": "users",
+  "order": 1,
+  "active": true
+}

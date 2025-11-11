@@ -1,0 +1,24 @@
+{
+  "id": "toub-women",
+  "title_en": "Women's Traditional Toub Wrap",
+  "title_ar": "الطوب التقليدي النسائي",
+  "image": "/images/uploads/toub-indigo.jpg",
+  "gallery": [
+    "/images/uploads/toub-indigo-1.jpg",
+    "/images/uploads/toub-indigo-2.jpg"
+  ],
+  "desc_en": "Handwoven toub in traditional indigo-dyed fabric featuring authentic Nubian patterns. This elegant wrap represents the rich textile heritage of northern Sudan.",
+  "desc_ar": "طوب منسوج يدوياً في قماش صبغ نيلة تقليدي يتميز بالأنماط النوبية الأصلية. هذا اللف الأنيق يمثل التراث النسيجي الغني لشمال السودان.",
+  "detailed_desc_en": "The toub is an iconic Sudanese textile worn by women across the country. This particular piece is woven using traditional Nubian techniques passed down through generations. The indigo dye is made from natural sources and the geometric patterns tell stories of Nubian culture and history.",
+  "detailed_desc_ar": "الطوب هو نسيج سوداني شهير ترتديه النساء في جميع أنحاء البلاد. هذه القطعة المحددة تُنسج باستخدام التقنيات النوبية التقليدية التي توارثتها الأجيال. صبغة النيلة مصنوعة من مصادر طبيعية والأنماط الهندسية تحكي قصص الثقافة النوبية والتاريخ.",
+  "region_en": "Northern Sudan - Nubian Region",
+  "region_ar": "شمال السودان - المنطقة النوبية",
+  "price": "$120 - $300",
+  "category": "women",
+  "tags": ["traditional", "handwoven", "indigo", "nubian", "wrap", "cultural"],
+  "sizes": ["Standard", "Large", "Extra Large"],
+  "colors": ["Indigo Blue", "Deep Blue", "Navy"],
+  "in_stock": true,
+  "featured": true,
+  "date_added": "2024-01-20T14:45:00Z"
+}

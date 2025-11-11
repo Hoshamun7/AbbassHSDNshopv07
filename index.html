@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudan Textile Heritage - Preserving Traditional Craftsmanship</title>
+    <meta name="description" content="Discover and preserve Sudan's rich textile heritage. Traditional clothing, artisan crafts, and cultural preservation across Sudanese communities.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sudan-heritage.netlify.app/">
+    <meta property="og:title" content="Sudan Textile Heritage - Preserving Traditional Craftsmanship">
+    <meta property="og:description" content="Discover and preserve Sudan's rich textile heritage. Traditional clothing, artisan crafts, and cultural preservation.">
+    <meta property="og:image" content="/images/uploads/hero-textile-artisans.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://sudan-heritage.netlify.app/">
+    <meta property="twitter:title" content="Sudan Textile Heritage">
+    <meta property="twitter:description" content="Preserving Sudan's textile heritage and empowering artisans.">
+    <meta property="twitter:image" content="/images/uploads/hero-textile-artisans.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Core Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+    
+    <style>
+        :root {
+            --brand-primary: #8B4513;
+            --brand-secondary: #D2691E;
+            --brand-accent: #CD853F;
+            --text-primary: #2D1810;
+            --text-secondary: #5D4E37;
+            --bg-cream: #FFF8DC;
+            --bg-warm: #F5F5DC;
+            --semantic-gold: #B8860B;
+            --semantic-green: #228B22;
+            --semantic-red: #B22222;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, var(--bg-cream) 0%, var(--bg-warm) 100%);
+            color: var(--text-primary);
+        }
+        
+        .font-display {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(rgba(139, 69, 19, 0.3), rgba(139, 69, 19, 0.5)), 
+                        url('/images/uploads/hero-textile-artisans.jpg') center/cover;
+            min-height: 100vh;
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(139, 69, 19, 0.15);
+        }
+        
+        .arabic-text {
+            font-family: 'Traditional Arabic', 'Arabic Typesetting', serif;
+            line-height: 1.8;
+        }
+        
+        .stat-counter {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--brand-primary);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+            color: white;
+            padding: 12px 32px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.3);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--brand-primary);
+            border: 2px solid var(--brand-primary);
+            padding: 10px 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .btn-secondary:hover {
+            background: var(--brand-primary);
+            color: white;
+        }
+        
+        .section-padding {
+            padding: 5rem 0;
+        }
+        
+        .collection-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(139, 69, 19, 0.1);
+        }
+        
+        .collection-image {
+            height: 250px;
+            background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .designer-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(139, 69, 19, 0.1);
+        }
+        
+        .designer-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin: 0 auto 1rem;
+        }
+        
+        .footer {
+            background: var(--text-primary);
+            color: var(--bg-cream);
+            padding: 3rem 0 2rem;
+        }
+        
+        .loading-spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(139, 69, 19, 0.3);
+            border-radius: 50%;
+            border-top-color: var(--brand-primary);
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        @media (max-width: 768px) {
+            .hero-bg {
+                min-height: 80vh;
+            }
+            
+            .stat-counter {
+                font-size: 2rem;
+            }
+            
+            .section-padding {
+                padding: 3rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-sm border-b border-stone-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <h1 class="text-xl font-display font-bold text-gradient">Sudan Heritage</h1>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#collections" class="text-stone-700 hover:text-brand-primary transition-colors">
+                        <span class="en-text">Collections</span>
+                        <span class="ar-text arabic-text" style="display: none;">المجموعات</span>
+                    </a>
+                    <a href="#artisans" class="text-stone-700 hover:text-brand-primary transition-colors">
+                        <span class="en-text">Artisans</span>
+                        <span class="ar-text arabic-text" style="display: none;">الحرفيين</span>
+                    </a>
+                    <a href="#about" class="text-stone-700 hover:text-brand-primary transition-colors">
+                        <span class="en-text">About</span>
+                        <span class="ar-text arabic-text" style="display: none;">عننا</span>
+                    </a>
+                    <button id="lang-toggle" class="btn-secondary text-sm" onclick="toggleLanguage()">
+                        <span id="lang-text">العربية</span>
+                    </button>
+                </div>
+                
+                <div class="md:hidden">
+                    <button class="text-stone-700 hover:text-brand-primary">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg flex items-center justify-center text-white relative">
+        <div class="absolute inset-0 bg-gradient-to-b from-black/20 to-black/40"></div>
+        <div class="relative z-10 text-center max-w-4xl mx-auto px-4">
+            <h1 class="text-5xl md:text-7xl font-display font-bold mb-6 leading-tight">
+                <span class="en-text block" id="hero-title-en"></span>
+                <span class="ar-text arabic-text block" id="hero-title-ar" style="display: none;"></span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto leading-relaxed opacity-90">
+                <span class="en-text" id="hero-subtitle-en"></span>
+                <span class="ar-text arabic-text" id="hero-subtitle-ar" style="display: none;"></span>
+            </p>
+            <button class="btn-primary text-lg px-8 py-4" onclick="scrollToSection('collections')">
+                <span class="en-text" id="hero-cta-en"></span>
+                <span class="ar-text arabic-text" id="hero-cta-ar" style="display: none;"></span>
+            </button>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="section-padding bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8" id="stats-grid">
+                <!-- Stats will be loaded dynamically -->
+                <div class="text-center">
+                    <div class="loading-spinner mx-auto"></div>
+                    <p class="mt-2 text-stone-600">Loading statistics...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section id="about" class="section-padding">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 fade-in">
+                <h2 class="text-4xl md:text-5xl font-display font-bold text-gradient mb-6">
+                    <span class="en-text" id="impact-title-en"></span>
+                    <span class="ar-text arabic-text" id="impact-title-ar" style="display: none;"></span>
+                </h2>
+                <p class="text-lg text-stone-600 max-w-3xl mx-auto leading-relaxed">
+                    <span class="en-text" id="impact-intro-en"></span>
+                    <span class="ar-text arabic-text" id="impact-intro-ar" style="display: none;"></span>
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="fade-in">
+                    <div class="relative">
+                        <div class="aspect-w-4 aspect-h-3 rounded-2xl overflow-hidden shadow-2xl">
+                            <img src="/images/uploads/community-weaving.jpg" 
+                                 alt="Sudanese artisans weaving traditional textiles" 
+                                 class="w-full h-96 object-cover">
+                        </div>
+                        <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-gradient-to-br from-orange-400 to-red-600 rounded-2xl opacity-20"></div>
+                    </div>
+                </div>
+                
+                <div class="space-y-8 fade-in">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-orange-400 to-red-600 rounded-xl flex items-center justify-center text-white font-bold text-xl">
+                            🎨
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">
+                                <span class="en-text">Traditional Techniques</span>
+                                <span class="ar-text arabic-text" style="display: none;">التقنيات التقليدية</span>
+                            </h3>
+                            <p class="text-stone-600">
+                                <span class="en-text">Preserving centuries-old weaving and embroidery methods passed down through generations.</span>
+                                <span class="ar-text arabic-text" style="display: none;">الحفاظ على طرق النسيج والتطريز القديمة التي توارثتها الأجيال.</span>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-orange-400 to-red-600 rounded-xl flex items-center justify-center text-white font-bold text-xl">
+                            👥
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">
+                                <span class="en-text">Community Empowerment</span>
+                                <span class="ar-text arabic-text" style="display: none;">تمكين المجتمعات</span>
+                            </h3>
+                            <p class="text-stone-600">
+                                <span class="en-text">Supporting over 120 communities with sustainable income opportunities.</span>
+                                <span class="ar-text arabic-text" style="display: none;">دعم أكثر من 120 مجتمع مع فرص دخل مستدامة.</span>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-gradient-to-br from-orange-400 to-red-600 rounded-xl flex items-center justify-center text-white font-bold text-xl">
+                            🌍
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-2">
+                                <span class="en-text">Cultural Preservation</span>
+                                <span class="ar-text arabic-text" style="display: none;">الحفاظ على الثقافة</span>
+                            </h3>
+                            <p class="text-stone-600">
+                                <span class="en-text">Documenting and sharing Sudan's rich textile heritage with the world.</span>
+                                <span class="ar-text arabic-text" style="display: none;">توثيق ومشاركة التراث النسيجي السوداني الغني مع العالم.</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products/Collections Section -->
+    <section id="collections" class="section-padding bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 fade-in">
+                <h2 class="text-4xl md:text-5xl font-display font-bold text-gradient mb-6">
+                    <span class="en-text">Traditional Collections</span>
+                    <span class="ar-text arabic-text" style="display: none;">المجموعات التقليدية</span>
+                </h2>
+                <p class="text-lg text-stone-600 max-w-2xl mx-auto">
+                    <span class="en-text">Discover authentic Sudanese textiles crafted by master artisans using traditional techniques.</span>
+                    <span class="ar-text arabic-text" style="display: none;">اكتشف النسيج السوداني الأصيل المصنوع من قبل الحرفيين المتميزين باستخدام التقنيات التقليدية.</span>
+                </p>
+            </div>
+            
+            <!-- Category Filter -->
+            <div class="flex flex-wrap justify-center gap-4 mb-8 fade-in">
+                <button class="filter-btn active px-6 py-2 rounded-full bg-gradient-to-r from-orange-400 to-red-600 text-white font-medium" data-filter="all">
+                    <span class="en-text">All</span>
+                    <span class="ar-text arabic-text" style="display: none;">الكل</span>
+                </button>
+                <button class="filter-btn px-6 py-2 rounded-full bg-stone-200 text-stone-700 font-medium hover:bg-stone-300 transition-colors" data-filter="men">
+                    <span class="en-text">Men's Wear</span>
+                    <span class="ar-text arabic-text" style="display: none;">ملابس رجالية</span>
+                </button>
+                <button class="filter-btn px-6 py-2 rounded-full bg-stone-200 text-stone-700 font-medium hover:bg-stone-300 transition-colors" data-filter="women">
+                    <span class="en-text">Women's Wear</span>
+                    <span class="ar-text arabic-text" style="display: none;">ملابس نسائية</span>
+                </button>
+                <button class="filter-btn px-6 py-2 rounded-full bg-stone-200 text-stone-700 font-medium hover:bg-stone-300 transition-colors" data-filter="accessories">
+                    <span class="en-text">Accessories</span>
+                    <span class="ar-text arabic-text" style="display: none;">إكسسوارات</span>
+                </button>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="products-grid">
+                <!-- Products will be loaded dynamically -->
+                <div class="text-center col-span-full">
+                    <div class="loading-spinner mx-auto"></div>
+                    <p class="mt-2 text-stone-600">Loading collections...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Artisans Section -->
+    <section id="artisans" class="section-padding">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 fade-in">
+                <h2 class="text-4xl md:text-5xl font-display font-bold text-gradient mb-6">
+                    <span class="en-text">Master Artisans</span>
+                    <span class="ar-text arabic-text" style="display: none;">الحرفيين المتميزين</span>
+                </h2>
+                <p class="text-lg text-stone-600 max-w-2xl mx-auto">
+                    <span class="en-text">Meet the skilled craftspeople who preserve Sudan's textile traditions through their exceptional work.</span>
+                    <span class="ar-text arabic-text" style="display: none;">تعرف على الحرفيين المهرة الذين يحافظون على تقاليد السودان النسيجية من خلال عملهم الاستثنائي.</span>
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="designers-grid">
+                <!-- Designers will be loaded dynamically -->
+                <div class="text-center col-span-full">
+                    <div class="loading-spinner mx-auto"></div>
+                    <p class="mt-2 text-stone-600">Loading artisan profiles...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="section-padding bg-gradient-to-r from-orange-400 to-red-600 text-white">
+        <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl md:text-5xl font-display font-bold mb-6">
+                <span class="en-text">Support Sudan's Textile Heritage</span>
+                <span class="ar-text arabic-text" style="display: none;">ادعم التراث النسيجي السوداني</span>
+            </h2>
+            <p class="text-xl mb-8 opacity-90">
+                <span class="en-text">Join us in preserving traditional crafts and empowering artisan communities across Sudan.</span>
+                <span class="ar-text arabic-text" style="display: none;">انضم إلينا في الحفاظ على الحرف التقليدية وتمكين مجتمعات الحرفيين عبر السودان.</span>
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="bg-white text-orange-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                    <span class="en-text">Shop Collections</span>
+                    <span class="ar-text arabic-text" style="display: none;">تسوق المجموعات</span>
+                </button>
+                <button class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-colors">
+                    <span class="en-text">Learn More</span>
+                    <span class="ar-text arabic-text" style="display: none;">اعرف أكثر</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div class="md:col-span-2">
+                    <h3 class="text-2xl font-display font-bold text-gradient mb-4">Sudan Heritage</h3>
+                    <p class="text-stone-300 mb-4 max-w-md">
+                        <span class="en-text">Preserving Sudan's rich textile heritage and empowering artisan communities through traditional craftsmanship.</span>
+                        <span class="ar-text arabic-text" style="display: none;">الحفاظ على التراث النسيجي السوداني الغني وتمكين مجتمعات الحرفيين من خلال الحرف التقليدية.</span>
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">
+                        <span class="en-text">Quick Links</span>
+                        <span class="ar-text arabic-text" style="display: none;">روابط سريعة</span>
+                    </h4>
+                    <ul class="space-y-2 text-stone-300">
+                        <li><a href="#collections" class="hover:text-white transition-colors">
+                            <span class="en-text">Collections</span>
+                            <span class="ar-text arabic-text" style="display: none;">المجموعات</span>
+                        </a></li>
+                        <li><a href="#artisans" class="hover:text-white transition-colors">
+                            <span class="en-text">Artisans</span>
+                            <span class="ar-text arabic-text" style="display: none;">الحرفيين</span>
+                        </a></li>
+                        <li><a href="#about" class="hover:text-white transition-colors">
+                            <span class="en-text">About</span>
+                            <span class="ar-text arabic-text" style="display: none;">عننا</span>
+                        </a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">
+                        <span class="en-text">Connect</span>
+                        <span class="ar-text arabic-text" style="display: none;">تواصل</span>
+                    </h4>
+                    <ul class="space-y-2 text-stone-300">
+                        <li><a href="mailto:info@sudan-heritage.com" class="hover:text-white transition-colors">info@sudan-heritage.com</a></li>
+                        <li><a href="tel:+249-91-234-5678" class="hover:text-white transition-colors">+249-91-234-5678</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-stone-600 pt-8 text-center text-stone-400">
+                <p>&copy; 2024 Sudan Textile Heritage. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Netlify Identity Widget -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    
+    <script>
+        // Global language state
+        let currentLang = 'en';
+        let siteSettings = {};
+        
+        // Initialize all dynamic content
+        document.addEventListener('DOMContentLoaded', async function() {
+            // Hide Arabic elements initially
+            document.querySelectorAll('.ar-text').forEach(el => el.style.display = 'none');
+            
+            // Load site settings first
+            await loadSiteSettings();
+            
+            // Load all content in order
+            await Promise.all([
+                loadHero(),
+                loadImpact(),
+                loadStats(),
+                loadProducts(),
+                loadDesigners()
+            ]);
+            
+            // Initialize animations and interactions
+            initializeAnimations();
+            initializeScrollEffects();
+            initializeFilters();
+        });
+        
+        // Load site settings
+        async function loadSiteSettings() {
+            try {
+                const response = await fetch('/_data/settings.json');
+                if (!response.ok) throw new Error('Failed to load settings');
+                siteSettings = await response.json();
+                
+                // Update page title and meta tags
+                document.title = currentLang === 'en' ? siteSettings.site_title_en : siteSettings.site_title_ar;
+            } catch (error) {
+                console.error('Error loading site settings:', error);
+            }
+        }
+        
+        // Update language display for dynamic content
+        function updateLanguageDisplay() {
+            const isArabic = currentLang === 'ar';
+            
+            // Update page direction and title
+            document.documentElement.setAttribute('dir', isArabic ? 'rtl' : 'ltr');
+            document.documentElement.setAttribute('lang', currentLang);
+            document.title = isArabic ? siteSettings.site_title_ar : siteSettings.site_title_en;
+            
+            // Update language toggle button
+            const langText = document.getElementById('lang-text');
+            if (langText) {
+                langText.textContent = isArabic ? 'English' : 'العربية';
+            }
+            
+            // Show/hide appropriate language content
+            document.querySelectorAll('.en-text').forEach(el => {
+                el.style.display = isArabic ? 'none' : 'inline';
+            });
+            document.querySelectorAll('.ar-text').forEach(el => {
+                el.style.display = isArabic ? 'inline' : 'none';
+            });
+        }
+        
+        // Language toggle function
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'ar' : 'en';
+            updateLanguageDisplay();
+            
+            // Reload dynamic content with new language
+            Promise.all([
+                loadHero(),
+                loadImpact(),
+                loadStats(),
+                loadProducts(),
+                loadDesigners()
+            ]);
+        }
+        
+        // Smooth scroll to section
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+        
+        // Load hero content
+        async function loadHero() {
+            try {
+                const response = await fetch('/_data/hero.json');
+                if (!response.ok) throw new Error('Failed to load hero content');
+                
+                const data = await response.json();
+                
+                // Update hero content
+                document.getElementById('hero-title-en').textContent = data.title_en;
+                document.getElementById('hero-title-ar').textContent = data.title_ar;
+                document.getElementById('hero-subtitle-en').textContent = data.subtitle_en;
+                document.getElementById('hero-subtitle-ar').textContent = data.subtitle_ar;
+                document.getElementById('hero-cta-en').textContent = data.cta_text_en;
+                document.getElementById('hero-cta-ar').textContent = data.cta_text_ar;
+                
+                // Update hero background if available
+                if (data.hero_image) {
+                    const heroSection = document.querySelector('.hero-bg');
+                    heroSection.style.background = `linear-gradient(rgba(139, 69, 19, 0.3), rgba(139, 69, 19, 0.5)), url('${data.hero_image}') center/cover`;
+                }
+                
+                updateLanguageDisplay();
+            } catch (error) {
+                console.error('Error loading hero content:', error);
+            }
+        }
+        
+        // Load impact content
+        async function loadImpact() {
+            try {
+                const response = await fetch('/_data/impact.json');
+                if (!response.ok) throw new Error('Failed to load impact content');
+                
+                const data = await response.json();
+                
+                // Update impact content
+                document.getElementById('impact-title-en').textContent = data.section_title_en;
+                document.getElementById('impact-title-ar').textContent = data.section_title_ar;
+                document.getElementById('impact-intro-en').textContent = data.intro_text_en;
+                document.getElementById('impact-intro-ar').textContent = data.intro_text_ar;
+                
+                updateLanguageDisplay();
+            } catch (error) {
+                console.error('Error loading impact content:', error);
+            }
+        }
+        
+        // Load statistics
+        async function loadStats() {
+            try {
+                const response = await fetch('/_data/stats.json');
+                if (!response.ok) throw new Error('Failed to load stats');
+                
+                const stats = await response.json();
+                const grid = document.getElementById('stats-grid');
+                
+                // Sort stats by order field if available
+                const sortedStats = stats.sort((a, b) => (a.order || 0) - (b.order || 0));
+                
+                grid.innerHTML = sortedStats.map(stat => `
+                    <div class="text-center stat-item fade-in">
+                        <div class="stat-counter font-display text-gradient mb-2">${stat.number}</div>
+                        <div class="text-stone-600 font-medium">
+                            <span class="en-text">${stat.label_en}</span>
+                            <span class="ar-text arabic-text" style="display: none;">${stat.label_ar}</span>
+                        </div>
+                        ${stat.description_en ? `<p class="text-sm text-stone-500 mt-2 max-w-xs mx-auto">
+                            <span class="en-text">${stat.description_en}</span>
+                            <span class="ar-text arabic-text" style="display: none;">${stat.description_ar || ''}</span>
+                        </p>` : ''}
+                    </div>
+                `).join('');
+                
+                // Animate counters
+                animateCounters();
+                updateLanguageDisplay();
+            } catch (error) {
+                console.error('Error loading stats:', error);
+                document.getElementById('stats-grid').innerHTML = 
+                    '<p style="text-align: center; color: var(--semantic-red);">Failed to load statistics</p>';
+            }
+        }
+        
+        // Load products
+        async function loadProducts() {
+            try {
+                const response = await fetch('/_data/products.json');
+                if (!response.ok) throw new Error('Failed to load products');
+                
+                const products = await response.json();
+                const grid = document.getElementById('products-grid');
+                
+                grid.innerHTML = products.map(product => `
+                    <div class="collection-card card-hover fade-in" data-category="${product.category}">
+                        <div class="collection-image" style="background-image: url('${product.image || '/images/uploads/default-product.jpg'}'), linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));">
+                            <div class="absolute inset-0 bg-black/20 flex items-center justify-center">
+                                <span class="text-white font-semibold text-lg">
+                                    <span class="en-text">${product.title_en}</span>
+                                    <span class="ar-text arabic-text" style="display: none;">${product.title_ar}</span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="region-tag bg-gradient-to-r from-orange-100 to-red-100 text-orange-800 px-3 py-1 rounded-full text-sm font-medium">
+                                    <span class="en-text">${product.region_en}</span>
+                                    <span class="ar-text arabic-text" style="display: none;">${product.region_ar}</span>
+                                </span>
+                                ${product.featured ? '<span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs font-medium">Featured</span>' : ''}
+                            </div>
+                            <h3 class="text-xl font-semibold mb-2 text-stone-800">
+                                <span class="en-text">${product.title_en}</span>
+                                <span class="ar-text arabic-text" style="display: none;">${product.title_ar}</span>
+                            </h3>
+                            <p class="text-stone-600 mb-4 text-sm leading-relaxed">
+                                <span class="en-text">${product.desc_en}</span>
+                                <span class="ar-text arabic-text" style="display: none;">${product.desc_ar}</span>
+                            </p>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="text-2xl font-bold text-gradient">${product.price}</span>
+                                ${!product.in_stock ? '<span class="text-red-600 text-sm font-medium">Out of Stock</span>' : ''}
+                            </div>
+                            ${product.sizes && product.sizes.length > 0 ? `
+                                <div class="mb-4">
+                                    <p class="text-sm text-stone-600 mb-2">Available Sizes:</p>
+                                    <div class="flex flex-wrap gap-2">
+                                        ${product.sizes.map(size => `<span class="bg-stone-100 text-stone-700 px-2 py-1 rounded text-xs">${size}</span>`).join('')}
+                                    </div>
+                                </div>
+                            ` : ''}
+                            <button class="btn-primary w-full" onclick="viewProduct('${product.id}')">
+                                <span class="en-text">View Collection</span>
+                                <span class="ar-text arabic-text" style="display: none;">عرض المجموعة</span>
+                            </button>
+                        </div>
+                    </div>
+                `).join('');
+                
+                updateLanguageDisplay();
+            } catch (error) {
+                console.error('Error loading products:', error);
+                document.getElementById('products-grid').innerHTML = 
+                    '<p style="text-align: center; color: var(--semantic-red);" class="col-span-full">Failed to load products</p>';
+            }
+        }
+        
+        // Load designers
+        async function loadDesigners() {
+            try {
+                const response = await fetch('/_data/designers.json');
+                if (!response.ok) throw new Error('Failed to load designers');
+                
+                const designers = await response.json();
+                const grid = document.getElementById('designers-grid');
+                
+                grid.innerHTML = designers.map(designer => `
+                    <div class="designer-card card-hover fade-in">
+                        ${designer.photo ? 
+                            `<img src="${designer.photo}" alt="${designer.name}" class="w-20 h-20 rounded-full mx-auto mb-4 object-cover">` :
+                            `<div class="designer-avatar">${designer.initials}</div>`
+                        }
+                        <h3 class="text-xl font-semibold mb-2 text-stone-800">${designer.name}</h3>
+                        ${designer.specialization_en ? `
+                            <p class="text-sm text-orange-600 font-medium mb-3">
+                                <span class="en-text">${designer.specialization_en}</span>
+                                <span class="ar-text arabic-text" style="display: none;">${designer.specialization_ar || ''}</span>
+                            </p>
+                        ` : ''}
+                        <p class="text-stone-600 mb-3 text-sm leading-relaxed">
+                            <span class="en-text">${designer.bio_en}</span>
+                            <span class="ar-text arabic-text" style="display: none;">${designer.bio_ar}</span>
+                        </p>
+                        <p class="text-stone-500 mb-4 text-sm">
+                            <strong>
+                                <span class="en-text">${designer.location_en}</span>
+                                <span class="ar-text arabic-text" style="display: none;">${designer.location_ar}</span>
+                            </strong>
+                            ${designer.experience ? ` • ${designer.experience} years experience` : ''}
+                        </p>
+                        <div class="flex justify-center space-x-3 mb-4">
+                            ${designer.instagram ? `<a href="${designer.instagram}" target="_blank" class="text-orange-600 hover:text-orange-700">📷</a>` : ''}
+                            ${designer.website ? `<a href="${designer.website}" target="_blank" class="text-orange-600 hover:text-orange-700">🌐</a>` : ''}
+                        </div>
+                        <button class="btn-secondary text-sm" onclick="viewDesigner('${designer.id}')">
+                            <span class="en-text">View Profile</span>
+                            <span class="ar-text arabic-text" style="display: none;">عرض الملف</span>
+                        </button>
+                    </div>
+                `).join('');
+                
+                updateLanguageDisplay();
+            } catch (error) {
+                console.error('Error loading designers:', error);
+                document.getElementById('designers-grid').innerHTML = 
+                    '<p style="text-align: center; color: var(--semantic-red);" class="col-span-full">Failed to load designers</p>';
+            }
+        }
+        
+        // Initialize animations
+        function initializeAnimations() {
+            // Animate elements on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+            
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
+        }
+        
+        // Initialize scroll effects
+        function initializeScrollEffects() {
+            // Parallax effect for hero
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                const hero = document.querySelector('.hero-bg');
+                if (hero) {
+                    hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+                }
+            });
+        }
+        
+        // Initialize category filters
+        function initializeFilters() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const productCards = document.querySelectorAll('.collection-card');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const filter = button.dataset.filter;
+                    
+                    // Update active button
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove('active', 'bg-gradient-to-r', 'from-orange-400', 'to-red-600', 'text-white');
+                        btn.classList.add('bg-stone-200', 'text-stone-700');
+                    });
+                    button.classList.add('active', 'bg-gradient-to-r', 'from-orange-400', 'to-red-600', 'text-white');
+                    button.classList.remove('bg-stone-200', 'text-stone-700');
+                    
+                    // Filter products
+                    productCards.forEach(card => {
+                        const category = card.dataset.category;
+                        if (filter === 'all' || category === filter) {
+                            card.style.display = 'block';
+                            card.classList.add('fade-in', 'visible');
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        }
+        
+        // Animate counter numbers
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-counter');
+            counters.forEach(counter => {
+                const target = counter.textContent;
+                const isNumber = /^\d+/.test(target);
+                
+                if (isNumber) {
+                    const finalNumber = parseInt(target.match(/^\d+/)[0]);
+                    let currentNumber = 0;
+                    const increment = finalNumber / 50;
+                    
+                    const timer = setInterval(() => {
+                        currentNumber += increment;
+                        if (currentNumber >= finalNumber) {
+                            counter.textContent = target;
+                            clearInterval(timer);
+                        } else {
+                            counter.textContent = Math.floor(currentNumber) + target.replace(/^\d+/, '');
+                        }
+                    }, 30);
+                }
+            });
+        }
+        
+        // Product view function
+        function viewProduct(productId) {
+            // In a real implementation, this would navigate to a product detail page
+            alert(`Viewing product: ${productId}\n\nIn a full implementation, this would open a detailed product page with more images, full description, and purchase options.`);
+        }
+        
+        // Designer view function
+        function viewDesigner(designerId) {
+            // In a real implementation, this would navigate to a designer profile page
+            alert(`Viewing designer: ${designerId}\n\nIn a full implementation, this would open a detailed designer profile with portfolio, biography, and contact information.`);
+        }
+        
+        // Netlify Identity handling
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on('init', user => {
+                if (!user) {
+                    window.netlifyIdentity.on('login', () => {
+                        document.location.href = '/';
+                    });
+                }
+            });
+        }
+    </script>
+</body>
+</html>

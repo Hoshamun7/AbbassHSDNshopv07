@@ -1,0 +1,11 @@
+{
+  "id": "products-sold",
+  "number": "2,500+",
+  "label_en": "Traditional Pieces Sold Worldwide",
+  "label_ar": "قطعة تقليدية بيعت حول العالم",
+  "description_en": "Connecting Sudanese artisans with global customers who appreciate authentic craftsmanship.",
+  "description_ar": "ربط الحرفيين السودانيين مع العملاء العالميين الذين يقدرون الحرفة الأصيلة.",
+  "icon": "globe",
+  "order": 4,
+  "active": true
+}

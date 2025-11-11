@@ -1,0 +1,17 @@
+{
+  "site_title_en": "Sudan Textile Heritage",
+  "site_title_ar": "التراث النسيجي السوداني",
+  "site_desc_en": "Preserving traditional Sudanese textiles and empowering artisans across communities",
+  "site_desc_ar": "الحفاظ على النسيج السوداني التقليدي وتمكين الحرفيين عبر المجتمعات",
+  "default_lang": "en",
+  "contact_email": "info@sudan-heritage.com",
+  "phone": "+249-91-234-5678",
+  "address_en": "Khartoum, Sudan",
+  "address_ar": "الخرطوم، السودان",
+  "social": {
+    "facebook": "https://facebook.com/sudan-heritage",
+    "instagram": "https://instagram.com/sudan_heritage",
+    "twitter": "https://twitter.com/sudan_heritage",
+    "youtube": "https://youtube.com/c/sudan-heritage"
+  }
+}

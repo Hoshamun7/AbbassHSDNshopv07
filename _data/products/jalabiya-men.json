@@ -1,0 +1,25 @@
+{
+  "id": "jalabiya-men",
+  "title_en": "Men's Traditional White Jalabiya",
+  "title_ar": "جلابية بيضاء تقليدية للرجال",
+  "image": "/images/uploads/jalabiya-white.jpg",
+  "gallery": [
+    "/images/uploads/jalabiya-white-1.jpg",
+    "/images/uploads/jalabiya-white-2.jpg",
+    "/images/uploads/jalabiya-white-3.jpg"
+  ],
+  "desc_en": "Classic white jalabiya with intricate hand-stitched embroidery along the neckline and cuffs. Made from premium cotton fabric, perfect for formal occasions and daily wear.",
+  "desc_ar": "جلابية بيضاء كلاسيكية مع تطريز يدوي معقد على طول العنق والأصفاد. مصنوعة من قماش قطني عالي الجودة، مثالية للمناسبات الرسمية والملابس اليومية.",
+  "detailed_desc_en": "This traditional Sudanese jalabiya represents centuries of cultural heritage. Handcrafted by master artisans in central Sudan, each piece takes 3-5 days to complete. The intricate embroidery patterns vary by region and family tradition, making each jalabiya unique.",
+  "detailed_desc_ar": "هذه الجلابية السودانية التقليدية تمثل قروناً من التراث الثقافي. مصنوعة يدوياً من قبل الحرفيين المختصين في وسط السودان، ويستغرق كل قطعة من 3-5 أيام لإكمالها. أنماط التطريز المعقدة تختلف حسب المنطقة وتقاليد العائلة، مما يجعل كل جلابية فريدة.",
+  "region_en": "Central Sudan - Khartoum Region",
+  "region_ar": "وسط السودان - منطقة الخرطوم",
+  "price": "$85 - $150",
+  "category": "men",
+  "tags": ["traditional", "handmade", "cotton", "white", "formal", "embroidery"],
+  "sizes": ["S", "M", "L", "XL", "XXL"],
+  "colors": ["White", "Off-white", "Cream"],
+  "in_stock": true,
+  "featured": true,
+  "date_added": "2024-01-15T10:30:00Z"
+}

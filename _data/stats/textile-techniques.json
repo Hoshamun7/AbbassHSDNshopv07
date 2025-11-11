@@ -1,0 +1,11 @@
+{
+  "id": "textile-techniques",
+  "number": "15",
+  "label_en": "Traditional Techniques Preserved",
+  "label_ar": "تقنية تقليدية محفوظة",
+  "description_en": "Including Nubian weaving, Beja embroidery, indigo dyeing, and regional specialties.",
+  "description_ar": "بما في ذلك النسيج النوبي، تطريز البجا، صبغ النيلة، والتخصصات الإقليمية.",
+  "icon": "palette",
+  "order": 2,
+  "active": true
+}

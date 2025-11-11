@@ -1,0 +1,12 @@
+{
+  "id": "sarah-johnson",
+  "name": "Sarah Johnson",
+  "role_en": "Cultural Anthropologist & Collector",
+  "role_ar": "أنثروبولوجية ثقافية ومجمعة",
+  "photo": "/images/uploads/sarah-johnson.jpg",
+  "testimonial_en": "The quality and authenticity of these textiles is extraordinary. Each piece tells a story of Sudan's rich cultural heritage. I'm impressed by the craftsmanship and the positive impact this initiative has on artisan communities.",
+  "testimonial_ar": "جودة وأصالة هذه المنسوجات استثنائية. كل قطعة تحكي قصة التراث الثقافي الغني للسودان. أنا معجبة بالحرفية والتأثير الإيجابي الذي لهذه المبادرة على مجتمعات الحرفيين.",
+  "rating": 5,
+  "order": 1,
+  "active": true
+}

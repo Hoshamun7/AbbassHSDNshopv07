@@ -1,0 +1,216 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
+
+# Enable editorial workflow for draft/publish system
+publish_mode: editorial_workflow
+
+# Editor settings
+editor:
+  preview: true
+
+# Site settings
+site_url: https://sudan-heritage.netlify.app
+logo_url: /images/logo.png
+
+# Editor settings for better UX
+editor:
+  preview: true
+  frame: false
+
+# Collections configuration
+collections:
+  # GLOBAL SETTINGS
+  - name: "settings"
+    label: "Site Settings"
+    delete: false
+    files:
+      - label: "General Settings"
+        name: "general"
+        file: "_data/settings.json"
+        fields:
+          - {label: "Site Title (English)", name: "site_title_en", widget: "string", default: "Sudan Textile Heritage"}
+          - {label: "Site Title (Arabic)", name: "site_title_ar", widget: "string", default: "التراث النسيجي السوداني"}
+          - {label: "Site Description (English)", name: "site_desc_en", widget: "text", required: false}
+          - {label: "Site Description (Arabic)", name: "site_desc_ar", widget: "text", required: false}
+          - {label: "Default Language", name: "default_lang", widget: "select", options: ["en", "ar"], default: "en"}
+          - {label: "Contact Email", name: "contact_email", widget: "string", required: false}
+          - {label: "Phone Number", name: "phone", widget: "string", required: false}
+          - {label: "Address (English)", name: "address_en", widget: "text", required: false}
+          - {label: "Address (Arabic)", name: "address_ar", widget: "text", required: false}
+          - {label: "Social Media", name: "social", widget: "object", fields: [
+              {label: "Facebook", name: "facebook", widget: "string", required: false},
+              {label: "Instagram", name: "instagram", widget: "string", required: false},
+              {label: "Twitter", name: "twitter", widget: "string", required: false},
+              {label: "YouTube", name: "youtube", widget: "string", required: false}
+            ]}
+
+  # HERO SECTION
+  - name: "hero"
+    label: "Hero Section"
+    delete: false
+    files:
+      - label: "Hero Content"
+        name: "hero"
+        file: "_data/hero.json"
+        fields:
+          - {label: "Title (English)", name: "title_en", widget: "string", default: "Preserving Sudan's Textile Heritage"}
+          - {label: "Title (Arabic)", name: "title_ar", widget: "string", default: "الحفاظ على التراث النسيجي السوداني"}
+          - {label: "Subtitle (English)", name: "subtitle_en", widget: "text", default: "Empowering artisans and celebrating traditional Sudanese clothing and footwear across 120+ communities"}
+          - {label: "Subtitle (Arabic)", name: "subtitle_ar", widget: "text", default: "تمكين الحرفيين والاحتفاء بالملابس والأحذية السودانية التقليدية في أكثر من 120 مجتمع"}
+          - {label: "Button Text (English)", name: "cta_text_en", widget: "string", default: "Explore Collections"}
+          - {label: "Button Text (Arabic)", name: "cta_text_ar", widget: "string", default: "استكشف المجموعات"}
+          - {label: "Hero Background Image", name: "hero_image", widget: "image", required: false, hint: "Recommended size: 1920x1080px"}
+
+  # IMPACT SECTION
+  - name: "impact"
+    label: "Impact Section"
+    delete: false
+    files:
+      - label: "Impact Content"
+        name: "impact"
+        file: "_data/impact.json"
+        fields:
+          - {label: "Section Title (English)", name: "section_title_en", widget: "string", default: "Our Impact Across Sudan"}
+          - {label: "Section Title (Arabic)", name: "section_title_ar", widget: "string", default: "تأثيرنا عبر السودان"}
+          - {label: "Intro Paragraph (English)", name: "intro_text_en", widget: "text", default: "Discover how we're preserving traditional textile techniques while empowering local communities and artisans across Sudan."}
+          - {label: "Intro Paragraph (Arabic)", name: "intro_text_ar", widget: "text", default: "اكتشف كيف نحافظ على تقنيات النسيج التقليدية بينما نمكن المجتمعات المحلية والحرفيين عبر السودان."}
+          - {label: "Impact Image", name: "impact_image", widget: "image", required: false, hint: "Image showing community impact"}
+
+  # PRODUCTS
+  - name: "products"
+    label: "Products"
+    label_singular: "Product"
+    folder: "_data/products"
+    create: true
+    slug: "{{slug}}"
+    extension: "json"
+    format: "json"
+    summary: "{{title_en}} - {{price}}"
+    sortable_fields: ['title_en', 'price', 'category', 'region_en']
+    fields:
+      - {label: "Product ID", name: "id", widget: "string", hint: "Unique identifier (e.g., jalabiya-men)", pattern: ['^[a-z0-9-]+$', "Must be lowercase with hyphens only"]}
+      - {label: "Title (English)", name: "title_en", widget: "string"}
+      - {label: "Title (Arabic)", name: "title_ar", widget: "string"}
+      - {label: "Product Image", name: "image", widget: "image", required: false, hint: "High-quality product image (800x600px recommended)"}
+      - {label: "Image Gallery", name: "gallery", widget: "list", field: {label: "Image", name: "image", widget: "image"}, required: false, hint: "Additional product images"}
+      - {label: "Description (English)", name: "desc_en", widget: "text"}
+      - {label: "Description (Arabic)", name: "desc_ar", widget: "text"}
+      - {label: "Detailed Description (English)", name: "detailed_desc_en", widget: "markdown", required: false}
+      - {label: "Detailed Description (Arabic)", name: "detailed_desc_ar", widget: "markdown", required: false}
+      - {label: "Region (English)", name: "region_en", widget: "string"}
+      - {label: "Region (Arabic)", name: "region_ar", widget: "string"}
+      - {label: "Price Range", name: "price", widget: "string", hint: "e.g., $85 - $250"}
+      - {label: "Category", name: "category", widget: "select", options: ["men", "women", "accessories", "footwear", "home", "special"], default: "men"}
+      - {label: "Tags", name: "tags", widget: "list", field: {label: "Tag", name: "tag", widget: "string"}, required: false, hint: "Search tags (e.g., 'traditional', 'handmade', 'cotton')"}
+      - {label: "Available Sizes", name: "sizes", widget: "list", field: {label: "Size", name: "size", widget: "string"}, required: false, hint: "e.g., S, M, L, XL"}
+      - {label: "Colors Available", name: "colors", widget: "list", field: {label: "Color", name: "color", widget: "string"}, required: false}
+      - {label: "In Stock", name: "in_stock", widget: "boolean", default: true}
+      - {label: "Featured Product", name: "featured", widget: "boolean", default: false}
+      - {label: "Date Added", name: "date_added", widget: "datetime", default: "{{now}}"}
+
+  # DESIGNERS
+  - name: "designers"
+    label: "Designers"
+    label_singular: "Designer"
+    folder: "_data/designers"
+    create: true
+    slug: "{{slug}}"
+    extension: "json"
+    format: "json"
+    summary: "{{name}} - {{location_en}}"
+    sortable_fields: ['name', 'location_en']
+    fields:
+      - {label: "Designer ID", name: "id", widget: "string", hint: "Unique identifier (e.g., zaza-kamal)", pattern: ['^[a-z0-9-]+$', "Must be lowercase with hyphens only"]}
+      - {label: "Initials", name: "initials", widget: "string", hint: "e.g., ZK", pattern: ['^[A-Z]{2}$', "Must be 2 uppercase letters"]}
+      - {label: "Full Name", name: "name", widget: "string"}
+      - {label: "Profile Photo", name: "photo", widget: "image", required: false, hint: "Professional headshot (400x400px recommended)"}
+      - {label: "Bio (English)", name: "bio_en", widget: "text"}
+      - {label: "Bio (Arabic)", name: "bio_ar", widget: "text"}
+      - {label: "Full Biography (English)", name: "full_bio_en", widget: "markdown", required: false}
+      - {label: "Full Biography (Arabic)", name: "full_bio_ar", widget: "markdown", required: false}
+      - {label: "Location (English)", name: "location_en", widget: "string"}
+      - {label: "Location (Arabic)", name: "location_ar", widget: "string"}
+      - {label: "Specialization (English)", name: "specialization_en", widget: "string", required: false, hint: "e.g., Traditional Weaving, Embroidery"}
+      - {label: "Specialization (Arabic)", name: "specialization_ar", widget: "string", required: false}
+      - {label: "Years of Experience", name: "experience", widget: "number", required: false, hint: "Years active in the field"}
+      - {label: "Website/Portfolio", name: "website", widget: "string", required: false}
+      - {label: "Instagram", name: "instagram", widget: "string", required: false}
+      - {label: "Featured Designer", name: "featured", widget: "boolean", default: false}
+      - {label: "Date Added", name: "date_added", widget: "datetime", default: "{{now}}"}
+
+  # STATISTICS
+  - name: "stats"
+    label: "Statistics"
+    label_singular: "Statistic"
+    folder: "_data/stats"
+    create: true
+    slug: "stat-{{slug}}"
+    extension: "json"
+    format: "json"
+    summary: "{{number}} {{label_en}}"
+    sortable_fields: ['number', 'label_en', 'order']
+    fields:
+      - {label: "Statistic ID", name: "id", widget: "string", hint: "Unique identifier (e.g., artisans-count)", pattern: ['^[a-z0-9-]+$', "Must be lowercase with hyphens only"]}
+      - {label: "Number/Value", name: "number", widget: "string", hint: "e.g., 50+, 120, 85%"}
+      - {label: "Label (English)", name: "label_en", widget: "string"}
+      - {label: "Label (Arabic)", name: "label_ar", widget: "string"}
+      - {label: "Description (English)", name: "description_en", widget: "text", required: false, hint: "Optional detailed explanation"}
+      - {label: "Description (Arabic)", name: "description_ar", widget: "text", required: false}
+      - {label: "Icon", name: "icon", widget: "select", required: false, options: [
+          "users", "heart", "star", "award", "globe", "handshake", 
+          "palette", "scissors", "thread", "home", "shop", "calendar"
+        ], hint: "Optional icon for visual representation"}
+      - {label: "Display Order", name: "order", widget: "number", default: 0, hint: "Lower numbers appear first"}
+      - {label: "Active", name: "active", widget: "boolean", default: true}
+
+  # BLOG/NEWS
+  - name: "blog"
+    label: "Blog Posts"
+    label_singular: "Blog Post"
+    folder: "_data/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    extension: "json"
+    format: "json"
+    summary: "{{title_en}} - {{date}}"
+    sortable_fields: ['date', 'title_en', 'featured']
+    fields:
+      - {label: "Post ID", name: "id", widget: "string", hint: "Unique identifier"}
+      - {label: "Title (English)", name: "title_en", widget: "string"}
+      - {label: "Title (Arabic)", name: "title_ar", widget: "string"}
+      - {label: "Publication Date", name: "date", widget: "datetime", default: "{{now}}"}
+      - {label: "Author", name: "author", widget: "string", default: "Admin"}
+      - {label: "Featured Image", name: "featured_image", widget: "image", required: false, hint: "1200x600px recommended"}
+      - {label: "Excerpt (English)", name: "excerpt_en", widget: "text", required: false, hint: "Brief summary for previews"}
+      - {label: "Excerpt (Arabic)", name: "excerpt_ar", widget: "text", required: false}
+      - {label: "Content (English)", name: "content_en", widget: "markdown"}
+      - {label: "Content (Arabic)", name: "content_ar", widget: "markdown"}
+      - {label: "Tags", name: "tags", widget: "list", field: {label: "Tag", name: "tag", widget: "string"}, required: false}
+      - {label: "Featured Post", name: "featured", widget: "boolean", default: false}
+      - {label: "Published", name: "published", widget: "boolean", default: true}
+
+  # TESTIMONIALS
+  - name: "testimonials"
+    label: "Testimonials"
+    label_singular: "Testimonial"
+    folder: "_data/testimonials"
+    create: true
+    slug: "{{slug}}"
+    extension: "json"
+    format: "json"
+    summary: "{{name}} - {{role_en}}"
+    fields:
+      - {label: "Testimonial ID", name: "id", widget: "string"}
+      - {label: "Name", name: "name", widget: "string"}
+      - {label: "Role/Title (English)", name: "role_en", widget: "string"}
+      - {label: "Role/Title (Arabic)", name: "role_ar", widget: "string"}
+      - {label: "Photo", name: "photo", widget: "image", required: false}
+      - {label: "Testimonial (English)", name: "testimonial_en", widget: "text"}
+      - {label: "Testimonial (Arabic)", name: "testimonial_ar", widget: "text"}
+      - {label: "Rating", name: "rating", widget: "number", default: 5, min: 1, max: 5, hint: "1-5 stars"}
+      - {label: "Display Order", name: "order", widget: "number", default: 0}
+      - {label: "Active", name: "active", widget: "boolean", default: true}
